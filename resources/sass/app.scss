@@ -1,0 +1,865 @@
+// ============================================================================
+// TITIPAN MOVIES - MAIN STYLESHEET
+// Gradient Colors: #977DFF, #0033FF, #0600AB, #00033D
+// ============================================================================
+
+// Bootstrap
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css');
+
+// Font Awesome
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+// Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+// ============================================================================
+// VARIABLES
+// ============================================================================
+$gradient-primary: linear-gradient(135deg, #977DFF 0%, #0033FF 100%);
+$gradient-secondary: linear-gradient(135deg, #0033FF 0%, #0600AB 100%);
+$gradient-dark: linear-gradient(135deg, #0600AB 0%, #00033D 100%);
+$gradient-full: linear-gradient(135deg, #977DFF 0%, #0033FF 50%, #0600AB 100%);
+$gradient-reverse: linear-gradient(135deg, #00033D 0%, #0600AB 50%, #0033FF 100%);
+
+$color-primary: #977DFF;
+$color-secondary: #0033FF;
+$color-tertiary: #0600AB;
+$color-dark: #00033D;
+
+$text-white: #ffffff;
+$text-light: rgba(255, 255, 255, 0.9);
+$text-muted: rgba(255, 255, 255, 0.7);
+
+// ============================================================================
+// GLOBAL STYLES
+// ============================================================================
+* {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #2d3748;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+#app,
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+// ============================================================================
+// TYPOGRAPHY
+// ============================================================================
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: $color-primary;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        color: $color-secondary;
+    }
+}
+
+// ============================================================================
+// CARD STYLES
+// ============================================================================
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    
+    &:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(151, 125, 255, 0.2);
+    }
+}
+
+.card-header {
+    background: $gradient-full;
+    color: $text-white;
+    font-weight: 700;
+    padding: 1.25rem 1.5rem;
+    border-bottom: none;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-footer {
+    background: rgba(0, 0, 0, 0.02);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+// ============================================================================
+// BORDER STYLES
+// ============================================================================
+.border-left-primary {
+    border-left: 0.35rem solid $color-primary !important;
+}
+
+.border-left-success {
+    border-left: 0.35rem solid #28a745 !important;
+}
+
+.border-left-info {
+    border-left: 0.35rem solid #17a2b8 !important;
+}
+
+.border-left-warning {
+    border-left: 0.35rem solid #ffc107 !important;
+}
+
+.border-left-danger {
+    border-left: 0.35rem solid #dc3545 !important;
+}
+
+// ============================================================================
+// NAVBAR STYLES
+// ============================================================================
+.navbar {
+    background: $gradient-full !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 1rem 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.1);
+    
+    // Ensure all text is white
+    * {
+        color: $text-white !important;
+    }
+    
+    .navbar-brand {
+        color: $text-white !important;
+        font-weight: 700;
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: $text-white !important;
+            transform: translateY(-2px);
+        }
+    }
+    
+    .nav-link {
+        color: $text-light !important;
+        transition: all 0.3s ease;
+        padding: 0.75rem 1.5rem;
+        border-radius: 12px;
+        font-weight: 600;
+        position: relative;
+        
+        &:hover {
+            color: $text-white !important;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        &.active {
+            color: $text-white !important;
+            background: rgba(255, 255, 255, 0.25);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+    }
+    
+    .navbar-text {
+        color: $text-light !important;
+    }
+    
+    .navbar-toggler {
+        border-color: rgba(255, 255, 255, 0.3);
+        
+        &:focus {
+            box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+        }
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+    
+    .dropdown-menu {
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border: none;
+        margin-top: 0.5rem;
+    }
+    
+    .dropdown-item {
+        padding: 0.75rem 1.25rem;
+        transition: all 0.2s ease;
+        color: #2d3748;
+        
+        &:hover {
+            background: linear-gradient(135deg, #f0ebff 0%, #e6f2ff 100%);
+            color: $color-tertiary;
+            padding-left: 1.5rem;
+        }
+        
+        i {
+            width: 20px;
+            text-align: center;
+        }
+    }
+}
+
+// ============================================================================
+// BUTTON STYLES
+// ============================================================================
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.3s ease;
+    border: none;
+    
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(151, 125, 255, 0.25);
+    }
+}
+
+.btn-primary {
+    background: $gradient-primary;
+    color: $text-white;
+    
+    &:hover {
+        background: $gradient-secondary;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(151, 125, 255, 0.4);
+        color: $text-white;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+.btn-gradient {
+    background: $gradient-primary;
+    color: $text-white;
+    
+    &:hover {
+        background: $gradient-secondary;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(151, 125, 255, 0.4);
+        color: $text-white;
+    }
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: $text-white;
+    
+    &:hover {
+        background: #5a6268;
+        color: $text-white;
+    }
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: $text-white;
+    
+    &:hover {
+        background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+        color: $text-white;
+    }
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: $text-white;
+    
+    &:hover {
+        background: linear-gradient(135deg, #c82333 0%, #dc3545 100%);
+        color: $text-white;
+    }
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #ff9800 100%);
+    color: #212529;
+    
+    &:hover {
+        background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
+        color: #212529;
+    }
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    color: $text-white;
+    
+    &:hover {
+        background: linear-gradient(135deg, #138496 0%, #17a2b8 100%);
+        color: $text-white;
+    }
+}
+
+.btn-light {
+    background: #f8f9fa;
+    color: #212529;
+    
+    &:hover {
+        background: #e2e6ea;
+        color: #212529;
+    }
+}
+
+.btn-dark {
+    background: $gradient-dark;
+    color: $text-white;
+    
+    &:hover {
+        background: $gradient-reverse;
+        color: $text-white;
+    }
+}
+
+.btn-outline-primary {
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    
+    &:hover {
+        background: $gradient-primary;
+        border-color: $color-primary;
+        color: $text-white;
+    }
+}
+
+.btn-outline-secondary {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+    
+    &:hover {
+        background: #6c757d;
+        color: $text-white;
+    }
+}
+
+.btn-outline-danger {
+    border: 2px solid #dc3545;
+    color: #dc3545;
+    
+    &:hover {
+        background: #dc3545;
+        color: $text-white;
+    }
+}
+
+.btn-outline-light {
+    border: 2px solid white;
+    color: white;
+    
+    &:hover {
+        background: white;
+        color: $color-tertiary;
+    }
+}
+
+// Button Sizes
+.btn-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 0.8rem 2rem;
+    font-size: 1.125rem;
+}
+
+// ============================================================================
+// BADGE STYLES
+// ============================================================================
+.badge {
+    padding: 0.5rem 0.8rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.badge-gradient {
+    background: $gradient-primary;
+    color: $text-white;
+}
+
+.badge-primary {
+    background: $color-primary;
+    color: $text-white;
+}
+
+.badge-secondary {
+    background: $color-secondary;
+    color: $text-white;
+}
+
+// ============================================================================
+// FORM STYLES
+// ============================================================================
+.form-control,
+.form-select {
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 0.7rem 1rem;
+    transition: all 0.3s ease;
+    
+    &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 0.25rem rgba(151, 125, 255, 0.15);
+        outline: none;
+    }
+}
+
+.form-label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #2d3748;
+}
+
+.form-check-input {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    
+    &:checked {
+        background-color: $color-primary;
+        border-color: $color-primary;
+    }
+    
+    &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 0.25rem rgba(151, 125, 255, 0.25);
+    }
+}
+
+// ============================================================================
+// TABLE STYLES
+// ============================================================================
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    
+    thead {
+        background: linear-gradient(135deg, #f0ebff 0%, #e6f2ff 100%);
+        
+        th {
+            color: $color-tertiary;
+            font-weight: 700;
+            border: none;
+            padding: 1rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+    }
+    
+    tbody {
+        tr {
+            transition: all 0.2s ease;
+            
+            &:hover {
+                background: linear-gradient(135deg, #f0ebff 0%, #e6f2ff 100%);
+                transform: scale(1.01);
+            }
+        }
+        
+        td {
+            padding: 1rem;
+            vertical-align: middle;
+            border-top: 1px solid #e2e8f0;
+        }
+    }
+}
+
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+// ============================================================================
+// MODAL STYLES
+// ============================================================================
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.modal-header {
+    background: $gradient-full;
+    color: $text-white;
+    border-bottom: none;
+    padding: 1.5rem;
+    
+    * {
+        color: $text-white !important;
+    }
+    
+    .modal-title {
+        font-weight: 700;
+    }
+    
+    .btn-close {
+        filter: brightness(0) invert(1);
+        opacity: 0.8;
+        
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e2e8f0;
+    padding: 1.5rem;
+}
+
+// ============================================================================
+// ALERT STYLES
+// ============================================================================
+.alert {
+    border: none;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    
+    &.alert-primary {
+        background: linear-gradient(135deg, #f0ebff 0%, #e6f2ff 100%);
+        color: $color-tertiary;
+        border-left: 4px solid $color-primary;
+    }
+    
+    &.alert-success {
+        background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+        color: #155724;
+        border-left: 4px solid #28a745;
+    }
+    
+    &.alert-danger {
+        background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+        color: #721c24;
+        border-left: 4px solid #dc3545;
+    }
+    
+    &.alert-warning {
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        color: #856404;
+        border-left: 4px solid #ffc107;
+    }
+    
+    &.alert-info {
+        background: linear-gradient(135deg, #d1ecf1 0%, #bee5eb 100%);
+        color: #0c5460;
+        border-left: 4px solid #17a2b8;
+    }
+}
+
+// ============================================================================
+// LOADING SPINNER
+// ============================================================================
+.spinner-border {
+    animation: spinner-border 0.75s linear infinite;
+    border-width: 3px;
+    
+    &.text-primary {
+        border-color: $color-primary;
+        border-right-color: transparent;
+    }
+}
+
+@keyframes spinner-border {
+    to { 
+        transform: rotate(360deg); 
+    }
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(5px);
+}
+
+// ============================================================================
+// PAGINATION
+// ============================================================================
+.pagination {
+    .page-link {
+        color: $color-tertiary;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        margin: 0 0.25rem;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: linear-gradient(135deg, #f0ebff 0%, #e6f2ff 100%);
+            border-color: $color-primary;
+            color: $color-tertiary;
+        }
+    }
+    
+    .page-item.active .page-link {
+        background: $gradient-primary;
+        border-color: $color-primary;
+        color: $text-white;
+        box-shadow: 0 4px 12px rgba(151, 125, 255, 0.3);
+    }
+    
+    .page-item.disabled .page-link {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+// ============================================================================
+// SCROLLBAR
+// ============================================================================
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $gradient-primary;
+    border-radius: 10px;
+    
+    &:hover {
+        background: $gradient-secondary;
+    }
+}
+
+// ============================================================================
+// SELECTION
+// ============================================================================
+::selection {
+    background: $color-primary;
+    color: $text-white;
+}
+
+::-moz-selection {
+    background: $color-primary;
+    color: $text-white;
+}
+
+// ============================================================================
+// UTILITIES
+// ============================================================================
+.text-gradient {
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-primary {
+    background: $gradient-primary;
+}
+
+.bg-gradient-full {
+    background: $gradient-full;
+}
+
+.shadow-custom {
+    box-shadow: 0 4px 20px rgba(151, 125, 255, 0.2);
+}
+
+.rounded-custom {
+    border-radius: 15px;
+}
+
+// ============================================================================
+// ANIMATIONS
+// ============================================================================
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease;
+}
+
+.zoom-in {
+    animation: zoomIn 0.3s ease;
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+// ============================================================================
+// RESPONSIVE
+// ============================================================================
+@media (max-width: 991.98px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1.25rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    h1 { font-size: 1.75rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.25rem; }
+    
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+// ============================================================================
+// ACCESSIBILITY
+// ============================================================================
+*:focus-visible {
+    outline: 3px solid rgba(151, 125, 255, 0.5);
+    outline-offset: 2px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+// ============================================================================
+// PRINT STYLES
+// ============================================================================
+@media print {
+    .navbar,
+    .btn,
+    .pagination {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+    }
+    
+    .card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+}
+
+// ============================================================================
+// REDUCED MOTION
+// ============================================================================
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,698 @@
+/* Base Styling */ 
+:root {
+    /* Warna utama dari proyek sebelumnya */
+    --primary-color: #213823;     /* Hijau tua/gelap - warna utama */
+    --secondary-color: #375534;   /* Hijau medium - warna sekunder */
+    --accent-color: #6B9071;      /* Hijau muda - warna aksen */
+    --accent-hover: #8FB996;      /* Hijau sangat muda - hover state */
+    --dark-accent: #0F2A1D;       /* Hijau sangat gelap - aksen gelap */
+    --light-color: #F5F7FA;       /* Putih keabu-abuan sangat muda - warna terang */
+    --dark-color: #1A1A2E;        /* Biru sangat gelap - warna gelap */
+    --success-color: #2ecc71;     /* Hijau cerah - indikator sukses */
+    --warning-color: #f39c12;     /* Oranye - indikator peringatan */
+    --danger-color: #e74c3c;      /* Merah - indikator bahaya/error */
+    --text-dark: #2c3e50;         /* Biru gelap - teks utama */
+    --text-light: #ffffff;        /* Putih - teks terang */
+    --text-muted: #95a5a6;        /* Abu-abu - teks sekunder */
+    --bg-light: #f9fafb;          /* Putih keabu-abuan - background terang */
+    --border-color: #e1e8ed;      /* Abu-abu muda - warna border */
+    
+    /* Gradients */
+    --green-gradient: linear-gradient(-45deg, #213823, #375534, #6B9071, #0F2A1D);
+    --success-gradient: linear-gradient(135deg, #2ecc71, #1cc88a);
+    --warning-gradient: linear-gradient(135deg, #f39c12, #f6c23e);
+    --danger-gradient: linear-gradient(135deg, #e74c3c, #e74a3b);
+    --info-gradient: linear-gradient(135deg, #3498db, #0acffe);
+}
+
+body {
+    background-color: var(--bg-light);
+}
+
+/* Card Styling with increased border radius */
+.dashboard-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-header {
+    background: var(--green-gradient);
+    color: var(--text-light);
+    font-weight: 600;
+    border: none;
+    padding: 15px 20px;
+}
+
+/* Status Indicators with distinct colors */
+.status-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    color: var(--text-light);
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.status-badge.belum {
+    background-color: var(--danger-color);
+}
+
+.status-badge.sedang {
+    background-color: var(--warning-color);
+    color: var(--dark-color);
+}
+
+.status-badge.selesai {
+    background-color: var(--success-color);
+}
+
+/* Table Styling */
+.table-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.table {
+    margin-bottom: 0;
+    border: 1px solid var(--border-color);
+}
+
+/* Menambahkan jarak antara header dan tabel */
+.table thead th {
+    background: var(--primary-color);
+    color: var(--text-light);
+    font-weight: 600;
+    border: none;
+    padding: 14px 15px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px; 
+    padding-bottom: 15px;
+}
+
+.table thead {
+    border-bottom: 10px solid transparent; /* Menambahkan jarak antara header dan body tabel */
+}
+
+/* Border pada setiap sel */
+.table td, .table th {
+    border: 1px solid var(--light-color);
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.table tbody tr:hover {
+    background-color: rgba(107, 144, 113, 0.05);
+    transform: scale(1.01);
+}
+
+.table td {
+    padding: 14px 15px;
+    vertical-align: middle;
+    border-top: none;
+    font-size: 0.9rem;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: var(--bg-light);
+}
+
+/* Progress Bar with distinct status colors */
+.progress {
+    height: 10px;
+    border-radius: 50px;
+    background-color: var(--border-color);
+    margin-top: 5px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background: var(--green-gradient);
+    border-radius: 50px;
+}
+
+.progress-bar-success {
+    background-color: var(--success-color);
+}
+
+.progress-bar-warning {
+    background-color: var(--warning-color);
+}
+
+.progress-bar-danger {
+    background-color: var(--danger-color);
+}
+
+/* Stats Cards with increased border radius */
+.stats-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    height: 160px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.stats-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.stats-card-body {
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stats-card-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2.5rem;
+    opacity: 0.8;
+}
+
+.stats-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.stats-card-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.stats-card-title {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+.stats-card-footer {
+    font-size: 0.8rem;
+    margin-top: auto;
+}
+
+/* Card color schemes dengan warna konsisten */
+.stats-card-warning .stats-card-bg {
+    background: var(--green-gradient);
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.slide-in {
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Location Badge with increased border radius */
+.location-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-left: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location-pabrik {
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    color: var(--text-light);
+}
+
+.location-listrik {
+    background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+    color: var(--text-light);
+}
+
+.location-perumahan {
+    background: linear-gradient(135deg, var(--accent-hover), var(--accent-color));
+    color: var(--text-dark);
+}
+
+.location-umum {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-accent));
+    color: var(--text-light);
+}
+
+/* System Info with increased border radius */
+.system-info-card {
+    background: var(--green-gradient);
+    color: var(--text-light);
+    border-radius: 20px;
+}
+
+.system-info-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.system-info-item:last-child {
+    border-bottom: none;
+}
+
+/* Manpower info cards - Perbaikan tampilan card jam kerja tukang dan kenek */
+.manpower-info {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.manpower-card {
+    flex: 1;
+    padding: 8px;
+    border-radius: 10px;
+    text-align: center;
+    color: var(--text-dark);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    min-width: 100px;
+}
+
+.manpower-card.tukang {
+    background: linear-gradient(-45deg, var(--light-color), var(--bg-light), var(--light-color), var(--bg-light));
+    border-left: 3px solid var(--secondary-color);
+}
+
+.manpower-card.kenek {
+    background: linear-gradient(-45deg, var(--light-color), var(--bg-light), var(--light-color), var(--bg-light));
+    border-left: 3px solid var(--accent-color);
+}
+
+.manpower-value {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.manpower-label {
+    font-size: 0.7rem;
+    opacity: 0.9;
+}
+
+/* Kawasan count styling */
+.kawasan-count {
+    font-weight: 500;
+}
+
+.kawasan-total {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.kawasan-completed {
+    font-weight: bold;
+}
+
+.kawasan-pending {
+    font-weight: bold;
+}
+
+/* Perbaikan untuk chart jam kerja agar tidak looping ke bawah */
+#tukangHoursChart, #kenekHoursChart {
+    max-height: 180px !important;
+    height: 180px !important;
+}
+
+/* Perbaikan tampilan data bulan sesuai filter */
+#monthlyChart {
+    max-height: 300px;
+}
+
+/* Chart Card Styling */
+.chart-card {
+    height: 100%;
+}
+
+.chart-card-header {
+    padding: 15px 20px;
+    background: var(--green-gradient);
+    color: var(--text-light);
+    border-bottom: 0;
+    font-weight: 600;
+}
+
+.tukang-header {
+    background: var(--green-gradient);
+}
+
+.kenek-header {
+    background: var(--green-gradient);
+}
+
+.chart-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 60px);
+}
+
+/* System Progress Bar */
+.system-progress {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none;
+}
+
+.system-progress .progress-bar {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Hours Badge */
+.hours-badge {
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    color: var(--text-light);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tukang-badge {
+    background: var(--green-gradient);
+}
+
+.kenek-badge {
+    background: var(--green-gradient);
+}
+
+/* Background for System Info Card */
+.bg-gradient-dark {
+    background: var(--green-gradient);
+}
+
+/* Welcome Card Styling */
+.welcome-card {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.welcome-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.welcome-card-body {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.welcome-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--green-gradient);
+    z-index: -2;
+}
+
+.welcome-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.welcome-avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome-avatar-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.welcome-avatar-circle i {
+    font-size: 2.5rem;
+    color: var(--text-light);
+}
+
+.welcome-title {
+    color: var(--text-light);
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-name {
+    font-weight: 700;
+    background: linear-gradient(to right, var(--text-light), var(--bg-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.welcome-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.welcome-date-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-date {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px 20px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.welcome-date-day {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-light);
+    line-height: 1;
+}
+
+.welcome-date-month {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.welcome-time {
+    margin-top: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .welcome-card-body {
+        padding: 20px;
+    }
+    
+    .welcome-avatar-circle {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .welcome-avatar-circle i {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-title {
+        font-size: 1.2rem;
+    }
+    
+    .welcome-text {
+        font-size: 0.85rem;
+    }
+    
+    .welcome-date {
+        padding: 8px 15px;
+    }
+    
+    .welcome-date-day {
+        font-size: 1.5rem;
+    }
+    
+    .col-md-3 {
+        margin-bottom: 20px;
+    }
+}
+
+/* Tombol dan elemen interaktif */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-outline-light {
+    color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+}
+
+.btn-outline-light.active {
+    background-color: var(--text-light);
+    color: var(--primary-color);
+}
+
+/* Warna background untuk badge */
+.bg-primary-subtle {
+    background-color: rgba(33, 56, 35, 0.1);
+}
+
+.bg-success-subtle {
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.bg-warning-subtle {
+    background-color: rgba(243, 156, 18, 0.1);
+}
+
+.bg-info-subtle {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.text-success {
+    color: var(--success-color) !important;
+}
+
+.text-warning {
+    color: var(--warning-color) !important;
+}
+
+.text-info {
+    color: var(--info-gradient) !important;
+}
+
+/* Border colors */
+.border-primary {
+    border-color: var(--primary-color) !important;
+}
+
+.border-success {
+    border-color: var(--success-color) !important;
+}
+
+.border-warning {
+    border-color: var(--warning-color) !important;
+}
+
+.border-info {
+    border-color: var(--info-gradient) !important;
+}
+
+/* Background colors untuk progress bar */
+.bg-success {
+    background-color: var(--success-color) !important;
+}
+
+.bg-warning {
+    background-color: var(--warning-color) !important;
+}
+
+.bg-danger {
+    background-color: var(--danger-color) !important;
+}
+
+.bg-info {
+    background-color: var(--accent-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Table header */
+.table-primary {
+    background-color: var(--primary-color) !important;
+    color: var(--text-light) !important;
+}
+
+/* Separator */
+.separator {
+    height: 1px;
+    background: var(--border-color);
+    margin: 20px 0;
+}
